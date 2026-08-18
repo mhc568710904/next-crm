@@ -14,7 +14,6 @@ import {
   AlertDialogCancel,
   AlertDialogAction,
 } from "@/components/ui/alert-dialog";
-import { Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function DeleteButton({ id }: { id: string }) {
