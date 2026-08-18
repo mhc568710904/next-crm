@@ -15,7 +15,7 @@ export async function getCustomers(search?: string) {
         ],
       }
     : {};
-
+  
   return prisma.customer.findMany({
     where,
     orderBy: { createdAt: "desc" },

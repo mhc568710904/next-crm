@@ -1,7 +1,10 @@
-import React from 'react'
+import { CustomerForm } from "@/components/customers/customer-form";
 
-export default function CreateCustomer() {
+export default function NewCustomerPage() {
   return (
-    <div>创建客户</div>
-  )
+    <div>
+      <h2 className="text-2xl font-bold mb-6">新建客户</h2>
+      <CustomerForm />
+    </div>
+  );
 }
