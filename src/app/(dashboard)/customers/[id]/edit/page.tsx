@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { notFound } from "next/navigation";
 import { getCustomerById } from "@/actions/customer";
 import { CustomerForm } from "@/components/customers/customer-form";
