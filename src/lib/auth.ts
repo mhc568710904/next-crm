@@ -2,7 +2,7 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "@better-auth/prisma-adapter";
 import { PrismaMariaDb } from "@prisma/adapter-mariadb";
-import { PrismaClient } from "@/generated/prisma/client";
+import { PrismaClient } from "@/prisma/client";
 
 const adapter = new PrismaMariaDb({
   host: process.env.DATABASE_HOST,
