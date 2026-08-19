@@ -26,3 +26,31 @@ export const taskSchema = z.object({
   priority: z.enum(["low", "medium", "high"]),
   customerId: z.string().min(1, "必须选择客户"),
 });
+
+// 认证相关
+export const loginSchema = z.object({
+  email: z.string().email("邮箱格式不正确"),
+  password: z.string().min(1, "密码不能为空"),
+});
+
+export const registerSchema = z.object({
+  name: z.string().min(1, "姓名不能为空"),
+  email: z.string().email("邮箱格式不正确"),
+  password: z.string().min(8, "密码至少 8 位"),
+});
+
+export const updateProfileSchema = z.object({
+  name: z.string().min(1, "姓名不能为空"),
+  image: z.string().optional().or(z.literal("")),
+});
+
+export const changePasswordSchema = z
+  .object({
+    currentPassword: z.string().min(1, "当前密码不能为空"),
+    newPassword: z.string().min(8, "新密码至少 8 位"),
+    confirmPassword: z.string().min(1, "确认密码不能为空"),
+  })
+  .refine((data) => data.newPassword === data.confirmPassword, {
+    message: "两次输入的密码不一致",
+    path: ["confirmPassword"],
+  });
